@@ -38,8 +38,16 @@ io.on('connection', socket => {
     socket.on('chatMessage', (msg) => {
         const user = getCurrentUser(socket.id);
 
+        // broadcast pesan chat ke semua user di room
         io.to(user.room).emit('message', formatMessage(user.username, msg));
-    })
+
+        // broadcast notifikasi ke semua user di room
+        io.to(user.room).emit('sendNotification', {
+            room: user.room,
+            username: user.username, 
+            text: msg
+        });
+    });
 
     // runs when client disconnects
     socket.on('disconnect', () => {

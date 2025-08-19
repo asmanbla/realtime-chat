@@ -1,0 +1,9 @@
+1. Siapkan komponen frontend dan backend nya 
+-- frontend untuk media tampilan aplikasi realtime
+-- backend berisi beberapa script sebagai fungsi aplikasi realtime 
+2. Masuk ke frontend 
+3. npx create-react-app chatty 
+4. npm install socket.io-client nanoid
+5. untuk menjalankan program bisa pake npm run dev
+6. npm install express socket.io moment 
+7. npm install -D nodemon
